@@ -94,6 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     //Preparation of Cell
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contact_cell", for:indexPath) as! ContactCellViewController
+       
         let contact : Contact
        contact=contacts[indexPath.row]
         cell.contactName?.text =
@@ -101,22 +102,23 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
                 " " + contact.fname +
                 " " + contact.lname
         cell.labelEmailAddress?.text=contact.email
+        
+        //Image loading
         let url = URL(string: contact.profilePicture)
         let data = try? Data(contentsOf: url!)
         cell.contactImage.image = UIImage(data: data!)
-          return cell
+        
+        //set background dynamically to cell
+        cell.cellBackgroundView.backgroundColor = UIColor(rgb: 0xf39c12)
+        if (indexPath.row % 2) != 0{
+            cell.cellBackgroundView.alpha=0.1
+        }else{
+            cell.cellBackgroundView.alpha=0.4
+        }
+        
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor(rgb: 0xf39c12)
-
-        if (indexPath.row % 2) != 0{
-            cell.alpha=0.1
-        }else{
-            cell.alpha=0.4
-        }
-    }
-   
     //define when i touch or select item on the list
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedContact = contacts[indexPath.row]
@@ -130,7 +132,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             detailViewController?.contact = selectedContact!
         }
     }
-//
+
 //    //Searchbar
 //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 //        if searchText.isEmpty || searchText.count < 3 {

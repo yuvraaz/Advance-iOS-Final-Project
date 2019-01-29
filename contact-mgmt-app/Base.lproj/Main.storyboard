@@ -34,10 +34,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qpk-Gj-fGa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uWc-Ce-Qww">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,6 +45,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibj-FL-y3o">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0t-Ij-qkQ">
                                                     <rect key="frame" x="8" y="5.2380952380950703" width="32" height="32"/>
                                                     <color key="backgroundColor" red="0.087974671310000002" green="1" blue="0.1345394546" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -71,16 +70,21 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Ibj-FL-y3o" secondAttribute="bottom" id="1Ks-y3-GVp"/>
                                                 <constraint firstAttribute="trailing" secondItem="4EQ-Gl-3ep" secondAttribute="trailing" id="OOL-JM-J32"/>
                                                 <constraint firstItem="4EQ-Gl-3ep" firstAttribute="top" secondItem="Tju-Ps-CEO" secondAttribute="top" id="PmU-BV-Mng"/>
                                                 <constraint firstItem="vqo-ch-uKE" firstAttribute="top" secondItem="4EQ-Gl-3ep" secondAttribute="bottom" id="Q9c-Bk-Oul"/>
                                                 <constraint firstAttribute="trailing" secondItem="vqo-ch-uKE" secondAttribute="trailing" id="WbW-yy-aFv"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ibj-FL-y3o" secondAttribute="trailing" id="b9C-g5-Z0s"/>
                                                 <constraint firstItem="4EQ-Gl-3ep" firstAttribute="leading" secondItem="J0t-Ij-qkQ" secondAttribute="trailing" constant="8" id="gNs-hU-pcn"/>
+                                                <constraint firstItem="Ibj-FL-y3o" firstAttribute="leading" secondItem="Tju-Ps-CEO" secondAttribute="leading" id="upu-v5-DEf"/>
                                                 <constraint firstItem="vqo-ch-uKE" firstAttribute="leading" secondItem="J0t-Ij-qkQ" secondAttribute="trailing" constant="8" id="wjj-I3-wSL"/>
                                                 <constraint firstItem="J0t-Ij-qkQ" firstAttribute="leading" secondItem="Tju-Ps-CEO" secondAttribute="leading" constant="8" id="wtC-la-fSa"/>
+                                                <constraint firstItem="Ibj-FL-y3o" firstAttribute="top" secondItem="Tju-Ps-CEO" secondAttribute="top" id="zp3-je-B4G"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cellBackgroundView" destination="Ibj-FL-y3o" id="NUS-GV-oaX"/>
                                             <outlet property="contactImage" destination="J0t-Ij-qkQ" id="6dh-NH-H8S"/>
                                             <outlet property="contactName" destination="4EQ-Gl-3ep" id="cJt-s3-mFX"/>
                                             <outlet property="labelEmailAddress" destination="vqo-ch-uKE" id="j9d-VQ-ggN"/>
@@ -98,9 +102,7 @@
                             <constraint firstAttribute="trailing" secondItem="uWc-Ce-Qww" secondAttribute="trailing" id="5Fy-YY-W0W"/>
                             <constraint firstItem="uWc-Ce-Qww" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7HZ-tf-Jmg"/>
                             <constraint firstAttribute="bottom" secondItem="uWc-Ce-Qww" secondAttribute="bottom" id="BPE-AB-n8z"/>
-                            <constraint firstItem="qpk-Gj-fGa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SNU-Y9-t1g"/>
                             <constraint firstItem="uWc-Ce-Qww" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="W07-Lp-SYe"/>
-                            <constraint firstItem="qpk-Gj-fGa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ypy-dz-8eX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
