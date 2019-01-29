@@ -8,19 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegate{
    
-    @IBOutlet weak var tableView: UITableView!
+     @IBOutlet weak var tableView: UITableView!
     var contacts : [Contact] = []
     var selectedContact : Contact?
     var requestCount=33
     
+    var searchedContacts : [Contact] = []
+    var searching = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         getContent(reqCount : requestCount)
      }
-    
-    
     
     //for api call
     func getContent(reqCount : Int){
@@ -31,8 +32,9 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
                 print("Not containing JSON")
                 return
             }
-           
-        
+            print(jsonResponse)
+
+        //Actual Parsing of data
             do {
                 if var data = data,
                      var results = jsonResponse["results"] as? [[String: Any]] {
@@ -71,29 +73,29 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
                         let newContact = Contact.init(title: title!, fname: firstName!, lname: lastName, street: streetName, city: cityName, email: emailAddress!, phone: phoneNumber, cell: cellNumber, profilePicture: profilePicture!,largePic: largeProfilePicture)
                         self.contacts.append(newContact)
                     }
-                   
-
-                }
+ 
+                 }
             } catch {
                 print("Error deserializing JSON: \(error)")
             }
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                
             }
         }
         task.resume()
     }
     //Table View Row Count
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+            return contacts.count
     }
     
     //Preparation of Cell
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contact_cell", for:indexPath) as! ContactCellViewController
         let contact : Contact
-        contact=contacts[indexPath.row]
+       contact=contacts[indexPath.row]
         cell.contactName?.text =
                contact.title +
                 " " + contact.fname +
@@ -105,7 +107,16 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
           return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor(rgb: 0xf39c12)
+
+        if (indexPath.row % 2) != 0{
+            cell.alpha=0.1
+        }else{
+            cell.alpha=0.4
+        }
+    }
+   
     //define when i touch or select item on the list
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedContact = contacts[indexPath.row]
@@ -119,9 +130,26 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             detailViewController?.contact = selectedContact!
         }
     }
+//
+//    //Searchbar
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchText.isEmpty || searchText.count < 3 {
+//                searchedContacts = contacts
+//                tableView.reloadData()
+//                return
+//        }
+//
+//        searchedContacts = contacts.filter({contact -> Bool in
+//            (contact.title+""+contact.fname).contains(searchText)
+//        })
+//        tableView.reloadData()
+//    }
+//
+//    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+//
+//    }
+//
+//
  
-    func convertTemperature(_ tempreture :Double)->Double{
-        return tempreture - 273.15
-    }
 }
 

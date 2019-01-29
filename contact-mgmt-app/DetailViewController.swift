@@ -10,14 +10,12 @@ import Foundation
 import UIKit
 class DetailViewController: UIViewController {
     
- 
+    @IBOutlet weak var backgroundView: UIView!
+    
     //UI Components
     @IBOutlet weak var imageUserProfile: UIImageView!
-    
     @IBOutlet weak var labelTitle: UILabel!
-    
     @IBOutlet weak var labelFirstName: UILabel!
-    
     @IBOutlet weak var labelLastName: UILabel!
     @IBOutlet weak var labelStreet: UILabel!
     @IBOutlet weak var labelCity: UILabel!
@@ -35,6 +33,9 @@ class DetailViewController: UIViewController {
     
     
     func upadateUI() {
+        //update background with 10%  opacity with Color 4 = f39c12
+        backgroundView.backgroundColor = UIColor(rgb: 0xf39c12)
+        backgroundView.alpha = 0.1 //10 %
         imageUrl=contact?.largePic
         
         let url = URL(string:imageUrl)
@@ -44,7 +45,7 @@ class DetailViewController: UIViewController {
                 self.imageUserProfile.image = UIImage(data: data!)
             }
         }
-        
+        //populate data on respective fields
         self.labelTitle?.text=contact?.title
         self.labelFirstName?.text=contact?.fname
         self.labelLastName?.text=contact?.lname

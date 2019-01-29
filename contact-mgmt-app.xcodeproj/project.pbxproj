@@ -16,6 +16,7 @@
 		2AC9F79021F4C24A00B6BB35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC9F78E21F4C24A00B6BB35 /* LaunchScreen.storyboard */; };
 		2AC9F79821F4C94000B6BB35 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9F79721F4C94000B6BB35 /* Contact.swift */; };
 		2AC9F79A21F4DFD500B6BB35 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9F79921F4DFD500B6BB35 /* DetailViewController.swift */; };
+		2AF2293A2200DC7A0005E899 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF229392200DC7A0005E899 /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2AC9F79121F4C24A00B6BB35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AC9F79721F4C94000B6BB35 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2AC9F79921F4DFD500B6BB35 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2AF229392200DC7A0005E899 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				2AC9F79921F4DFD500B6BB35 /* DetailViewController.swift */,
 				2A12605721FE77A700CE8045 /* ContactCellViewController.swift */,
 				2A83363E21FF8FA400494F67 /* Weather.swift */,
+				2AF229392200DC7A0005E899 /* CustomColor.swift */,
 			);
 			path = "contact-mgmt-app";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AC9F79821F4C94000B6BB35 /* Contact.swift in Sources */,
+				2AF2293A2200DC7A0005E899 /* CustomColor.swift in Sources */,
 				2AC9F78821F4C24700B6BB35 /* ViewController.swift in Sources */,
 				2A12605821FE77A700CE8045 /* ContactCellViewController.swift in Sources */,
 				2AC9F78621F4C24700B6BB35 /* AppDelegate.swift in Sources */,
