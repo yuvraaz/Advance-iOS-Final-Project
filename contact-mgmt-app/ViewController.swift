@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
      @IBOutlet weak var tableView: UITableView!
     var contacts : [Contact] = []
     var selectedContact : Contact?
-    var requestCount=33
+    var requestCount=60
     
     var searchedContacts : [Contact] = []
     var searching = false
