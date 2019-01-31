@@ -15,6 +15,7 @@ class ContactCellViewController: UITableViewCell{
     @IBOutlet weak var cellBackgroundView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         contactImage.layer.cornerRadius = contactImage.frame.size.width/2
         contactImage.clipsToBounds = true
    

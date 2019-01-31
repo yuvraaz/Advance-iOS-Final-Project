@@ -13,10 +13,9 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
      @IBOutlet weak var tableView: UITableView!
     var contacts : [Contact] = []
     var selectedContact : Contact?
-    var requestCount=60
+    var requestCount=70
     
-    var searchedContacts : [Contact] = []
-    var searching = false
+     var searching = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     //for api call
     func getContent(reqCount : Int){
-        let url = URL(string:"https://randomuser.me/api/?results="+String(reqCount))
+         let url = URL(string:"https://randomuser.me/api/?results="+String(reqCount))
          let task = URLSession.shared.dataTask(with: url!) {
             (data,response,error) in
             guard let jsonResponse = (try?  JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)) as? [String:Any] else {
@@ -33,7 +32,6 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
                 return
             }
             print(jsonResponse)
-
         //Actual Parsing of data
             do {
                 if var data = data,
@@ -56,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
                             firstName=name["first"] as? String ?? ""
                             lastName=name["last"] as? String  ?? ""
                          }
-                       emailAddress = result["email"] as? String ?? ""
+                        emailAddress = result["email"] as? String ?? ""
                         phoneNumber = result["phone"] as? String ?? ""
                         cellNumber = result["cell"] as? String ?? ""
  
@@ -132,26 +130,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             detailViewController?.contact = selectedContact!
         }
     }
-
-//    //Searchbar
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchText.isEmpty || searchText.count < 3 {
-//                searchedContacts = contacts
-//                tableView.reloadData()
-//                return
-//        }
-//
-//        searchedContacts = contacts.filter({contact -> Bool in
-//            (contact.title+""+contact.fname).contains(searchText)
-//        })
-//        tableView.reloadData()
-//    }
-//
-//    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-//
-//    }
-//
-//
+ 
  
 }
 
