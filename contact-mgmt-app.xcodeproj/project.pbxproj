@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2A12605821FE77A700CE8045 /* ContactCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A12605721FE77A700CE8045 /* ContactCellViewController.swift */; };
-		2A83363F21FF8FA400494F67 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A83363E21FF8FA400494F67 /* Weather.swift */; };
 		2AC9F78621F4C24700B6BB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9F78521F4C24700B6BB35 /* AppDelegate.swift */; };
 		2AC9F78821F4C24700B6BB35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9F78721F4C24700B6BB35 /* ViewController.swift */; };
 		2AC9F78B21F4C24700B6BB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC9F78921F4C24700B6BB35 /* Main.storyboard */; };
@@ -21,7 +20,6 @@
 
 /* Begin PBXFileReference section */
 		2A12605721FE77A700CE8045 /* ContactCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellViewController.swift; sourceTree = "<group>"; };
-		2A83363E21FF8FA400494F67 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		2AC9F78221F4C24700B6BB35 /* contact-mgmt-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "contact-mgmt-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC9F78521F4C24700B6BB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC9F78721F4C24700B6BB35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 				2AC9F79721F4C94000B6BB35 /* Contact.swift */,
 				2AC9F79921F4DFD500B6BB35 /* DetailViewController.swift */,
 				2A12605721FE77A700CE8045 /* ContactCellViewController.swift */,
-				2A83363E21FF8FA400494F67 /* Weather.swift */,
 				2AF229392200DC7A0005E899 /* CustomColor.swift */,
 			);
 			path = "contact-mgmt-app";
@@ -155,7 +152,6 @@
 				2AC9F78821F4C24700B6BB35 /* ViewController.swift in Sources */,
 				2A12605821FE77A700CE8045 /* ContactCellViewController.swift in Sources */,
 				2AC9F78621F4C24700B6BB35 /* AppDelegate.swift in Sources */,
-				2A83363F21FF8FA400494F67 /* Weather.swift in Sources */,
 				2AC9F79A21F4DFD500B6BB35 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
