@@ -19,7 +19,12 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getContent(reqCount : requestCount)
+        if NetworkReachability.isConnectedToNetwork(){
+            getContent(reqCount : requestCount)
+        }else{
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
      }
     
     //for api call

@@ -13,6 +13,7 @@
 		2A9451E02204897500E22A3E /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9451DF2204897500E22A3E /* Name.swift */; };
 		2A9451E2220489B000E22A3E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9451E1220489B000E22A3E /* Location.swift */; };
 		2A9451E422048A0300E22A3E /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9451E322048A0300E22A3E /* Picture.swift */; };
+		2A9451E9220493BC00E22A3E /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9451E8220493BC00E22A3E /* NetworkReachability.swift */; };
 		2AC9F78621F4C24700B6BB35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9F78521F4C24700B6BB35 /* AppDelegate.swift */; };
 		2AC9F78821F4C24700B6BB35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9F78721F4C24700B6BB35 /* ViewController.swift */; };
 		2AC9F78B21F4C24700B6BB35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC9F78921F4C24700B6BB35 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		2A9451DF2204897500E22A3E /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		2A9451E1220489B000E22A3E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2A9451E322048A0300E22A3E /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		2A9451E8220493BC00E22A3E /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		2AC9F78221F4C24700B6BB35 /* contact-mgmt-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "contact-mgmt-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC9F78521F4C24700B6BB35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC9F78721F4C24700B6BB35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				2AC9F79921F4DFD500B6BB35 /* DetailViewController.swift */,
 				2A12605721FE77A700CE8045 /* ContactCellViewController.swift */,
 				2AF229392200DC7A0005E899 /* CustomColor.swift */,
+				2A9451E8220493BC00E22A3E /* NetworkReachability.swift */,
 			);
 			path = "contact-mgmt-app";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9451E9220493BC00E22A3E /* NetworkReachability.swift in Sources */,
 				2A9451DC2204890500E22A3E /* ContactResponse.swift in Sources */,
 				2A9451E2220489B000E22A3E /* Location.swift in Sources */,
 				2A9451E422048A0300E22A3E /* Picture.swift in Sources */,
