@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var labelPhone: UILabel!
     @IBOutlet weak var labelCell: UILabel!
     //Data
-    var contact : Contact?
+    var contact : Result?
     var imageUrl : String!
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class DetailViewController: UIViewController {
         //update background with 10%  opacity with Color 4 = f39c12
         backgroundView.backgroundColor = UIColor(rgb: 0xf39c12)
         backgroundView.alpha = 0.1 //10 %
-        imageUrl=contact?.largePic
+        imageUrl=contact?.picture?.large
         
         let url = URL(string:imageUrl)
         DispatchQueue.global().async {
@@ -46,14 +46,14 @@ class DetailViewController: UIViewController {
             }
         }
         //populate data on respective fields
-        self.labelTitle?.text=contact?.title
-        self.labelFirstName?.text=contact?.fname
-        self.labelLastName?.text=contact?.lname
-        self.labelStreet?.text=contact?.street
-        self.labelCity?.text=contact?.city
+        self.labelTitle?.text=contact?.name?.title
+        self.labelFirstName?.text=contact?.name?.first
+        self.labelLastName?.text=contact?.name?.last
+        self.labelStreet?.text=contact?.location?.street
+        self.labelCity?.text=contact?.location?.city
         self.labelEmail?.text=contact?.email
         self.labelPhone?.text=contact?.phone
-        self.labelCell?.text=contact?.phone
+        self.labelCell?.text=contact?.cell
         
      }
 }
